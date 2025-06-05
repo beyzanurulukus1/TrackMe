@@ -41,6 +41,9 @@ This is a client-side web application. No installation is required. Simply open 
 - Click the delete button next to the habit you want to remove
 - Rate your daily productivity with stars and view your last rating at the bottom
 
+![githubb](https://github.com/user-attachments/assets/1451d04b-e0a3-4fa3-81d1-fb3f201181d0)
+
+
 # Weekly Habits Part
 - Write the habit you want to add to the box and click to "Add" button
 - Click to checkbox next to habit each day you comleted it
@@ -62,7 +65,7 @@ This is a client-side web application. No installation is required. Simply open 
 
 ## 📷 Screenshots
 ![github](https://github.com/user-attachments/assets/6086ea90-1f4c-4445-944c-a2c1146c373e)
-![githubb](https://github.com/user-attachments/assets/1451d04b-e0a3-4fa3-81d1-fb3f201181d0)
+
 
 
 
