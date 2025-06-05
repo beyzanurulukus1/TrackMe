@@ -69,10 +69,4 @@ This is a client-side web application. No installation is required. Simply open 
 # About Us Part
 - You can see our developers 
 - You can contact with them on linkedin
-![aboutus](https://github.com/user-attachments/assets/01eafe5c-90c1-474f-a57e-c930ab24074c)
-
----
-
-
-
-
+  ![aboutus](https://github.com/user-attachments/assets/01eafe5c-90c1-474f-a57e-c930ab24074c)
