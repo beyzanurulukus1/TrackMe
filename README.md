@@ -50,6 +50,9 @@ This is a client-side web application. No installation is required. Simply open 
 - Click the delete button next to the habit you want to remove
 - Leave a weekly note to yourself
 
+  ![weekly](https://github.com/user-attachments/assets/14c4d0d5-f4e7-4ceb-a895-a57bf27366ec)
+
+
 # Monthly Habits Part
 - Write the habit you want to add to the box and click to "Add" button
 - Click to checkbox next to habit each day you comleted it
@@ -57,14 +60,18 @@ This is a client-side web application. No installation is required. Simply open 
 - Click the "View Graphics" button to see your weekly comleted habits or to see your weekly notes on the month you choose
 - Click the "View Calendar" button to see a calendar which you can add your events
 
+  ![monthly](https://github.com/user-attachments/assets/8714001a-2274-482c-8fb2-91a6e568e4cd)
+  ![graphics](https://github.com/user-attachments/assets/3df9877b-450c-4e70-8c42-25d5faa63789)
+  ![calendar](https://github.com/user-attachments/assets/e2914ac6-491c-4573-96ac-126d6b75c37a)
+
+
+
 # About Us Part
 - You can see our developers 
 - You can contact with them on linkedin
+![aboutus](https://github.com/user-attachments/assets/01eafe5c-90c1-474f-a57e-c930ab24074c)
 
 ---
-
-## 📷 Screenshots
-![github](https://github.com/user-attachments/assets/6086ea90-1f4c-4445-944c-a2c1146c373e)
 
 
 
