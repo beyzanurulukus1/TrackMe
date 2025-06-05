@@ -18,7 +18,7 @@ The purpose of this Habit Tracker App is to help users **build and maintain posi
 - View habit completion history visually
 - Leave yourself a weekly note and view them on the monthly part
 - Delete habits you no longer want to track
-- Using calendar to view plans
+- Use a calendar to view plans and progress
 - Meet with developers and contact with them on linkedin
 - Responsive design that works on desktop and mobile
 - Data saved locally in the browser (using `localStorage`) so progress persists between sessions
@@ -33,7 +33,33 @@ The purpose of this Habit Tracker App is to help users **build and maintain posi
 
 ## 🛠️ How to Run
 
-### For users:
-1. Download or clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/habit-tracker.git
+This is a client-side web application. No installation is required. Simply open the index.html file in any modern web browser (Chrome, Firefox, Safari, Edge) or visit the live URL if hosted online.
+
+---
+
+💻 Example Usage
+
+# Open the app in your browser by opening the index.html file or visiting the live URL.
+
+# Daily Habits Part
+- Write the habit you want to add to the box and click to "Add" button
+- Click to checkbox next to habit each day you comleted it
+- Click the delete button next to the habit you want to remove
+- Rate your daily productivity with stars and view your last rating at the bottom
+
+# Weekly Habits Part
+- Write the habit you want to add to the box and click to "Add" button
+- Click to checkbox next to habit each day you comleted it
+- Click the delete button next to the habit you want to remove
+- Leave a weekly note to yourself
+
+# Monthly Habits Part
+- Write the habit you want to add to the box and click to "Add" button
+- Click to checkbox next to habit each day you comleted it
+- Click the delete button next to the habit you want to remove
+- Click the "View Graphics" button to see your weekly comleted habits or to see your weekly notes on the month you choose
+- Click the "View Calendar" button to see a calendar which you can add your events
+
+# About Us Part
+- You can see our developers 
+- You can contact with them on linkedin
