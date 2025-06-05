@@ -1,7 +1,6 @@
 # TrackMe
 Habit Tracker Web App
 ## Project Name
-
 TrackMe
 
 ## Project Purpose
