@@ -27,7 +27,8 @@ The purpose of this Habit Tracker App is to help users **build and maintain posi
 
 ## 📷 Screenshots
 
-![image](https://github.com/user-attachments/assets/b5faa54d-3368-4700-9a3a-80d644238b80)
+<img width="1000" alt="giriş" src="https://github.com/user-attachments/assets/0f0cf583-e78d-44a3-8038-ff0cfaae3d3d" />
+
 
 
 ---
