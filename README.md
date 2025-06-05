@@ -27,7 +27,8 @@ The purpose of this Habit Tracker App is to help users **build and maintain posi
 
 ## 📷 Screenshots
 
-*(Add screenshots of your app here)*
+![image](https://github.com/user-attachments/assets/b5faa54d-3368-4700-9a3a-80d644238b80)
+
 
 ---
 
@@ -37,7 +38,7 @@ This is a client-side web application. No installation is required. Simply open 
 
 ---
 
-💻 Example Usage
+## 💻 Example Usage
 
 # Open the app in your browser by opening the index.html file or visiting the live URL.
 
@@ -63,3 +64,7 @@ This is a client-side web application. No installation is required. Simply open 
 # About Us Part
 - You can see our developers 
 - You can contact with them on linkedin
+
+---
+
+##
