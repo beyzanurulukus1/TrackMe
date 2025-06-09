@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>TrackMe - Monthly Stats & Weekly Notes</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+body {
+  font-family: DynaPuff, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+h2 {
+  color: rgb(77, 15, 77);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 400px;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.notes-container {
+  max-width: 700px;
+  margin: 20px auto 0 auto;
+  padding: 0 15px;
+  text-align: left;
+}
+
+#monthSelector {
+  padding: 6px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #4d0f4d;
+  color: #4d0f4d;
+  background-color: #f9f9f9;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#selectedMonthTitle {
+  margin-top: 20px;
+  color: #4d0f4d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: fixed; /* Hücrelerin taşmasını engeller */
+  word-wrap: break-word; /* Uzun kelimeleri kırar */
+}
+
+th, td {
+  border: 1px solid #4d0f4d;
+  padding: 8px;
+  text-align: left;
+  font-size: 16px;
+}
+
+th {
+  background-color: #4d0f4d;
+  color: white;
+}
+
+button.delete-btn {
+  background-color: #b03060;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button.delete-btn:hover {
+  background-color: #7a1f3f;
+}
+
+/* Responsive kısım */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+  #monthSelector {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  th, td {
+    font-size: 14px;
+    padding: 6px;
+  }
+  button.delete-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+  .chart-container {
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+  #monthSelector {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+  th, td {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  button.delete-btn {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+  .chart-container {
+    height: 400px;
+    padding: 0 10px;
+  }
+  .notes-container {
+    padding: 0 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Monthly Habit Completion Statistics</h2>
+
+<div class="chart-container">
+  <canvas id="monthlyChart"></canvas>
+</div>
+
+<div class="notes-container">
+  <label for="monthSelector"><strong>Select Month:</strong></label>
+  <select id="monthSelector" title="Select a month to view weekly notes">
+    <option value="">-- Select a month --</option>
+    <option value="0">January</option>
+    <option value="1">February</option>
+    <option value="2">March</option>
+    <option value="3">April</option>
+    <option value="4">May</option>
+    <option value="5">June</option>
+    <option value="6">July</option>
+    <option value="7">August</option>
+    <option value="8">September</option>
+    <option value="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+  </select>
+
+  <h3 id="selectedMonthTitle"></h3>
+
+  <!-- Haftalık notlar tablosu -->
+  <table id="weeklyNotesTable" style="display:none;">
+    <thead>
+      <tr>
+        <th>Note</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Notlar buraya eklenecek -->
+    </tbody>
+  </table>
+</div>
+
+<script>
+  // LocalStorage'dan habit verileri çek
+  const dailyHabitsData = JSON.parse(localStorage.getItem('dailyHabits')) || [];
+  const weeklyHabitsData = JSON.parse(localStorage.getItem('weeklyHabits')) || [];
+  const monthlyHabitsData = JSON.parse(localStorage.getItem('monthlyHabits')) || [];
+
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 
+                  'July', 'August', 'September', 'October', 'November', 'December'];
+
+  // 12 ay için toplam tamamlanan alışkanlık sayısı tut
+  const habitStats = Array.from({ length: 12 }, () => ({ completed: 0 }));
+
+  const currentYear = new Date().getFullYear();
+
+  function processHabitDates(habitsList, statsArray, year) {
+    habitsList.forEach(habit => {
+      if (habit.completedDates) {
+        habit.completedDates.forEach(date => {
+          const [itemYear, itemMonth] = date.split('-');
+          if (parseInt(itemYear) === year) {
+            const monthIndex = parseInt(itemMonth) - 1;
+            if (statsArray[monthIndex]) {
+              statsArray[monthIndex].completed++;
+            }
+          }
+        });
+      }
+    });
+  }
+
+  processHabitDates(dailyHabitsData, habitStats, currentYear);
+  processHabitDates(weeklyHabitsData, habitStats, currentYear);
+  processHabitDates(monthlyHabitsData, habitStats, currentYear);
+
+  const completedCountsForChart = habitStats.map(stat => stat.completed);
+
+  const ctx = document.getElementById('monthlyChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Total Habits Completed',
+        data: completedCountsForChart,
+        backgroundColor: 'rgba(77, 15, 77, 0.7)',
+        borderColor: 'rgba(77, 15, 77, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true },
+        title: { display: true, text: 'Monthly Habit Chart' },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const monthIndex = ctx.dataIndex;
+              return `Habits Completed: ${habitStats[monthIndex].completed}`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+      }
+    }
+  });
+
+  // Haftalık notlar için örnek data yoksa ekle (opsiyonel)
+  if (!localStorage.getItem('weeklyNotes')) {
+    const sampleWeeklyNotes = [
+      { month: 0, text: "First week of January note." },
+      { month: 0, text: "Second week of January note." },
+      { month: 1, text: "February week 1 note." },
+      { month: 3, text: "April note example." }
+    ];
+    localStorage.setItem('weeklyNotes', JSON.stringify(sampleWeeklyNotes));
+  }
+
+  function renderWeeklyNotesTable(month) {
+    const weeklyNotes = JSON.parse(localStorage.getItem('weeklyNotes')) || [];
+    const filteredNotes = weeklyNotes.filter(note => note.month === month);
+
+    const table = document.getElementById('weeklyNotesTable');
+    const tbody = table.querySelector('tbody');
+    tbody.innerHTML = '';
+
+    if (filteredNotes.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="2" style="text-align:center; color:#4d0f4d;">No weekly notes for this month.</td></tr>`;
+      table.style.display = 'table';
+      return;
+    }
+
+    filteredNotes.forEach((noteObj, index) => {
+      const tr = document.createElement('tr');
+
+      const noteTd = document.createElement('td');
+      noteTd.textContent = noteObj.text;
+      tr.appendChild(noteTd);
+
+      const actionTd = document.createElement('td');
+      const delBtn = document.createElement('button');
+      delBtn.textContent = 'Delete';
+      delBtn.classList.add('delete-btn');
+      delBtn.addEventListener('click', () => {
+        deleteWeeklyNote(month, index);
+      });
+      actionTd.appendChild(delBtn);
+      tr.appendChild(actionTd);
+
+      tbody.appendChild(tr);
+    });
+
+    table.style.display = 'table';
+  }
+
+  function deleteWeeklyNote(month, noteIndex) {
+    if (!confirm('Are you sure you want to delete this note?')) return;
+
+    let weeklyNotes = JSON.parse(localStorage.getItem('weeklyNotes')) || [];
+
+    // Find notes only for that month
+    const notesForMonth = weeklyNotes.filter(note => note.month === month);
+
+    // Remove the note at noteIndex from that filtered list
+    notesForMonth.splice(noteIndex, 1);
+
+    // Rebuild the full weeklyNotes excluding the deleted note
+    weeklyNotes = weeklyNotes.filter(note => note.month !== month).concat(notesForMonth);
+
+    localStorage.setItem('weeklyNotes', JSON.stringify(weeklyNotes));
+    renderWeeklyNotesTable(month);
+  }
+
+  function showNotesForMonth(month) {
+    if (isNaN(month)) {
+      document.getElementById('notesList').innerHTML = '';
+      document.getElementById('selectedMonthTitle').textContent = '';
+      document.getElementById('weeklyNotesTable').style.display = 'none';
+      return;
+    }
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+    document.getElementById('selectedMonthTitle').textContent = monthNames[month] + ' Weekly Notes';
+
+    renderWeeklyNotesTable(month);
+  }
+
+  document.getElementById('monthSelector').addEventListener('change', (e) => {
+    const month = parseInt(e.target.value);
+    if (!isNaN(month)) {
+      showNotesForMonth(month);
+    } else {
+      document.getElementById('weeklyNotesTable').style.display = 'none';
+      document.getElementById('selectedMonthTitle').textContent = '';
+    }
+  });
+
+  // Sayfa yüklendiğinde Ocak ayının haftalık notlarını göster
+  showNotesForMonth(0);
+</script>
+
+</body>
+</html>

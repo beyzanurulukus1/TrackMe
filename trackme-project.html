@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="habit tracker, habit, tick, check it, daily routines, discipline" />
+  <meta name="description" content="A habit tracker to make your life easier and more organized." />
+  <title>TrackMe - Your Personal Habit Tracking Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Fjalla+One&family=Miniver&family=Playwrite+ZA:wght@100..400&family=Satisfy&family=DynaPuff:wght@400..700&display=swap"
+    rel="stylesheet" />
+  <style>
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50" id="top">
+  <!-- Navbar -->
+  <header class="bg-white shadow-md">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <img src="images/img1.png" alt="logo" class="w-16 h-16" />
+          <span class="logo-text">TrackMe</span>
+        </div>
+        <div class="nav-links">
+          <a href="#top">Home</a>
+          <a href="#daily">Daily</a>
+          <a href="#weekly">Weekly</a>
+          <a href="#monthly">Monthly</a>
+          <a href="#aboutUs">About Us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="opening">
+    <h1>Welcome To Our Site!</h1>
+    <h3><i>Why TrackMe?</i></h3>
+    <p>
+      TrackMe is here to help you gain new habits, break old habits and achieve your goals.<br />
+      Your life will be more organized after using this website!
+    </p>
+    <a href="#daily" class="btn btn-outline-dark">Let's Start <i class="bi bi-arrow-right-short"></i></a>
+  </div>
+
+  <!-- Daily Section -->
+  <section id="daily" class="py-20">
+    <div class="container mx-auto px-6">
+      <h3 class="titles">Daily</h3>
+      <p class="text mb-12">
+        This section designed to follow your daily habits and goals.<br />
+        If you do not want to limit yourself with ready-made templates and want to write your own habits,<br />
+        TrackMe is always here for all freedom-lovers!
+      </p>
+
+      <!-- Table Container -->
+      <div class="table-container max-w-3xl mx-auto mb-8">
+        <h4 class="table-title">Daily Goals</h4>
+        <table id="dailyGoalsTable" class="habit-table">
+          <tbody id="dailyHabitsTableBody"></tbody>
+        </table>
+        <div class="text-center mt-6">
+          <input type="text" id="newHabitInput" name="newHabitInput" placeholder="Add new daily habit"
+            class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+          <button type="button" onclick="addDailyHabit()"
+            class="ml-2 px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-300">
+            Add
+          </button>
+        </div>
+      </div>
+
+      <!-- Rating Container -->
+      <div class="rating-container max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h5 class="text-xl font-semibold mb-6 text-center text-gray-700">Rate Your Day's Productivity!</h5>
+        <div class="stars mb-8" id="productivityStars">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+        </div>
+
+        <div id="calendarRating" class="text-center">
+          <h5 class="text-lg font-medium mb-3 text-gray-600">Your Latest Productivity Rating:</h5>
+          <div id="calendarStars" class="text-3xl text-yellow-400">Not rated yet</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weekly Section -->
+  <section id="weekly" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h3 class="titles">Weekly</h3>
+      <p class="text mb-12">
+        This section designed to follow your weekly habits and goals.<br />
+        You can leave notes to yourself and view your weekly statistics.
+      </p>
+
+      <div class="table-container max-w-3xl mx-auto mb-8">
+        <h4 class="table-title">Weekly Goals</h4>
+        <table id="weeklyGoalsTable" class="habit-table">
+          <tbody id="weeklyHabitsTableBody"></tbody>
+        </table>
+        <div class="text-center mt-6">
+          <input type="text" id="newWeeklyHabitInput" name="newWeeklyHabitInput" placeholder="Add new weekly habit"
+            class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+          <button type="button" onclick="addWeeklyHabit()"
+            class="ml-2 px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-300">
+            Add
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto">
+        <h5 id="note" class="text-2xl mb-4">Leave your weekly notes to yourself!</h5>
+        <form class="box">
+          <textarea name="Note" rows="5" cols="50" placeholder="write there..." id="weeklyNoteTextarea"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500"></textarea>
+          <div class="flex justify-center gap-4 mt-4">
+            <button type="button" id="saveWeeklyNoteButton"
+              class="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-300">
+              Save Note
+            </button>
+            <button type="button" id="clearWeeklyNoteButton"
+              class="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-300">
+              Clear Note
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monthly Section -->
+  <section id="monthly" class="py-20">
+    <div class="container mx-auto px-6">
+      <h3 class="titles">Monthly</h3>
+      <p class="text mb-12">
+        This section designed to follow your monthly habits and goals.<br />
+        You can view the graphs created based on your weekly and daily data and review the calendar in detail.<br />
+        You can also easily track your monthly goals and add new ones.
+      </p>
+
+      <div class="table-container max-w-3xl mx-auto mb-8">
+        <h4 class="table-title">Monthly Goals</h4>
+        <table id="monthlyGoalsTable" class="habit-table">
+          <tbody id="monthlyHabitsTableBody"></tbody>
+        </table>
+        <div class="text-center mt-6">
+          <input type="text" id="newMonthlyHabitInput" name="newMonthlyHabitInput" placeholder="Add new monthly habit"
+            class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+          <button type="button" onclick="addMonthlyHabit()"
+            class="ml-2 px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-300">
+            Add
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center gap-6 mt-12">
+        <button id="buton1" type="button" onclick="window.location.href='graphics.html'"
+          class="inline-flex items-center px-8 py-4 bg-pink-400 text-white rounded-lg hover:bg-pink-500 transition duration-300">
+          View Graphics
+        </button>
+        <button id="buton2" type="button" onclick="window.location.href='calendar/calendar.html'"
+          class="inline-flex items-center px-8 py-4 bg-pink-400 text-white rounded-lg hover:bg-pink-500 transition duration-300">
+          View Calendar
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="aboutUs" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h3 class="titles">About Us</h3>
+      <p class="text mb-12">
+        We are first year students of Kocaeli University, Software Engineering Department.<br />
+        Developed this site as a project for our web technologies course.<br />
+        We hope you found our site useful and enjoyable. Thank you for using it!!
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+          <img src="images/web1.png" alt="us1" class="w-24 h-24 mx-auto mb-4 rounded-full" />
+          <p class="font-dynapuff text-gray-700">240229078 - Aslı Sudenur Şahin</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+          <img src="images/web2.png" alt="us2" class="w-24 h-24 mx-auto mb-4 rounded-full" />
+          <p class="font-dynapuff text-gray-700">240229073 - Pınar Erva Gündağ</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+          <img src="images/web3.png" alt="us3" class="w-24 h-24 mx-auto mb-4 rounded-full" />
+          <p class="font-dynapuff text-gray-700">240229079 - Züleyha Demir</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+          <img src="images/web4.png" alt="us4" class="w-24 h-24 mx-auto mb-4 rounded-full" />
+          <p class="font-dynapuff text-gray-700">240229076 - Beyza Nur Ulukuş</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-pink-100 to-purple-100">
+    <div class="container mx-auto px-6 py-12">
+      <div class="text-center">
+        <p class="text-2xl font-dynapuff text-gray-700 mb-6">Connect with us on LinkedIn:</p>
+        <div class="linkedin-links">
+          <a href="https://www.linkedin.com/in/asl%C4%B1-sude-nur-%C5%9Fahin-5b1b46331" target="_blank">
+            <i class="bi bi-linkedin"></i>
+            Aslı Sudenur Şahin
+          </a>
+          <a href="https://www.linkedin.com/in/p%C4%B1nar-erva-g%C3%BCnda%C4%9F-27aa9b331" target="_blank">
+            <i class="bi bi-linkedin"></i>
+            Pınar Erva Gündağ
+          </a>
+          <a href="https://www.linkedin.com/in/z%C3%BCleyha-demir-b426bb31a" target="_blank">
+            <i class="bi bi-linkedin"></i>
+            Züleyha Demir
+          </a>
+          <a href="https://www.linkedin.com/in/beyza-nur-uluku%C5%9F-679632316" target="_blank">
+            <i class="bi bi-linkedin"></i>
+            Beyza Nur Ulukuş
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="in.js"></script>
+</body>
+
+</html>

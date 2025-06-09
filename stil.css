@@ -1,0 +1,736 @@
+.opening {
+    background-color: rgb(236, 212, 226);
+    padding: 100px;
+    border-radius: 70%;
+    border: 5px solid rgb(245, 172, 214);
+    text-align: center;
+}
+
+.opening h1 {
+    font-size: 100px;
+    font-family: Satisfy;
+    text-shadow: 9px 9px 12px rgb(219, 225, 233);
+    color: rgb(36, 53, 80);
+}
+
+.opening h3 {
+    font-size: 60px;
+    font-family: DynaPuff;
+    font-weight: 300;
+}
+
+.opening p {
+    font-size: 30px;
+    font-family: DynaPuff;
+}
+
+.btn {
+    font-size: 30px;
+    border-style: dashed;
+    color: rgb(40, 24, 4);
+}
+
+.btn:hover {
+    background-color: rgb(111, 39, 115);
+}
+
+.nav-item a {
+    color: rgb(123, 62, 123);
+    font-weight: bold;
+}
+
+.nav-link.active {
+    background-color: rgb(77, 15, 77) !important;
+    color: white !important;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.text {
+    text-align: center;
+    font-family: DynaPuff;
+    font-size: 20px;
+}
+
+.titles {
+    font-family: Satisfy, cursive;
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 9px 9px 12px rgb(236, 163, 213);
+}
+
+.table-wrapper {
+  width: 80%;
+  max-width:fit-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+table {
+  width: 80%;
+  max-width:fit-content;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin: 50px auto;
+}
+
+td {
+    border: 1.5px solid #959595;
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 18px;
+    white-space: normal;
+}
+
+caption {
+    caption-side: top;
+    font-size: 30px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+    font-family: DynaPuff;
+    width: fit-content;
+    background-color: cadetblue;
+    text-shadow: #959595 2px 2px 3px;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+#swipe {
+    text-align: center;
+    font-family: DynaPuff;
+    font-size: 25px;
+    color: chocolate;
+    background-color: #ebbd7f;
+    padding: 10px;
+    border: 1px solid #3c2900;
+    border-radius: 8px;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ccc;
+    margin: 20px auto;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.stars span {
+    cursor: pointer;
+    user-select: none;
+}
+
+.stars span:hover,
+.stars span:hover~span {
+    color: gold;
+}
+
+.stars span {
+    color: #ccc;
+}
+
+.box {
+    text-align: center;
+}
+
+#note {
+    text-align: center;
+    font-size: 20px;
+    font-family: Acme;
+}
+
+#buton1 {
+    background-color: rgb(245, 172, 214);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    font-family: DynaPuff;
+    border-color: rgb(216, 125, 192);
+    border: none;
+}
+
+#buton1:hover {
+    background-color: cadetblue;
+}
+
+#buton2 {
+    background-color: rgb(245, 172, 214);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    font-family: DynaPuff;
+    border-color: rgb(216, 125, 192);
+    border: none;
+}
+
+#buton2:hover {
+    background-color: cadetblue;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.member {
+    text-align: center;
+    font-family: DynaPuff;
+    font-size: 18px;
+    color: rgb(36, 53, 80);
+}
+
+.footer {
+    background-color: rgb(236, 212, 226);
+    padding: 30px;
+    text-align: center;
+    font-family: DynaPuff;
+    font-weight: lighter;
+    margin-top: 50px;
+    border-top: 3px solid rgb(216, 125, 192);
+}
+
+.footer-content p {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: rgb(36, 53, 80);
+    font-weight: lighter;
+}
+
+.linkedin-links a {
+    display: inline-block;
+    margin: 8px 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(77, 15, 77);
+    transition: color 0.3s ease;
+}
+
+.linkedin-links a:hover {
+    color: cadetblue;
+}
+
+.linkedin-links i {
+    margin-right: 5px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+   .nav-pills {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center; 
+    gap: 8px; 
+  }
+
+  .nav-item {
+    flex: 0 0 auto; 
+  }
+
+  .nav-link {
+    white-space: nowrap;
+    font-size: 14px; 
+    padding: 6px 12px; 
+    border-radius: 8px;
+  }
+    .opening {
+        padding: 40px;
+        border-radius: 20%;
+    }
+
+    .opening h1 {
+        font-size: 48px;
+    }
+
+    .opening h3 {
+        font-size: 32px;
+    }
+
+    .opening p {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+
+    .titles {
+        font-size: 40px;
+    }
+
+    .text {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+
+    td {
+        font-size: 20px;
+        padding: 10px;
+        white-space: normal;
+    }
+
+    caption {
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    #buton1,
+    #buton2 {
+        width: 90%;
+        max-width: 300px;
+        font-size: 16px;
+        padding: 12px 0;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-content p {
+        font-size: 18px;
+    }
+
+    .linkedin-links a {
+        font-size: 16px;
+    }
+
+    #swipe {
+        font-size: 16px;
+        padding: 8px;
+        width: fit-content;
+        margin: 10px auto;
+    }
+
+    #note {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    #newHabitInput {
+        width: 70%;
+        font-size: 14px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    #newHabitInput+button {
+        width: 28%;
+        font-size: 14px;
+        padding: 10px 0;
+        margin-left: 2%;
+        box-sizing: border-box;
+    }
+
+    #newWeeklyHabitInput {
+        width: 70%;
+        font-size: 14px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    #newWeeklyHabitInput+button {
+        width: 28%;
+        font-size: 14px;
+        padding: 10px 0;
+        margin-left: 2%;
+        box-sizing: border-box;
+    }
+#newMonthlyHabitInput {
+  flex: 1 1 60%;
+  min-width: 180px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: DynaPuff;
+  box-sizing: border-box;
+}
+
+#newMonthlyHabitInput + button {
+  flex: 1 1 30%;
+  min-width: 100px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: DynaPuff;
+  box-sizing: border-box;
+}
+#monthlyGoalsTable + div input,
+  #monthlyGoalsTable + div button {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+  }
+
+  #monthlyGoalsTable + div {
+    text-align: center;
+  }
+  .stars {
+    font-size: 1.5rem; 
+    margin: 10px auto; 
+  }
+
+  #calendarRating h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  #calendarStars {
+    font-size: 20px; 
+  }
+
+  .stars span {
+    margin: 0 4px; 
+  }
+}
+
+@media (max-width: 576px) {
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        max-width: fit-content;
+        margin: 10px auto;
+        border-collapse: collapse;
+    }
+
+    td {
+        white-space: normal;
+        font-size: 16px;
+        padding: 8px;
+    }
+    #newHabitInput {
+        width: 70%;
+        font-size: 14px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    #newHabitInput+button {
+        width: 28%;
+        font-size: 14px;
+        padding: 10px 0;
+        margin-left: 2%;
+        box-sizing: border-box;
+    }
+
+    #newWeeklyHabitInput {
+        width: 70%;
+        font-size: 14px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    #newWeeklyHabitInput+button {
+        width: 28%;
+        font-size: 14px;
+        padding: 10px 0;
+        margin-left: 2%;
+        box-sizing: border-box;
+    }
+
+    #newMonthlyHabitInput {
+        width: 70%;
+        font-size: 14px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    #newMonthlyHabitInput+button {
+        width: 28%;
+        font-size: 14px;
+        padding: 10px 0;
+        margin-left: 2%;
+        box-sizing: border-box;
+    }
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.6;
+}
+
+.delete-habit-btn {
+    background-color: #7f56b0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+    user-select: none;
+}
+
+.delete-habit-btn:hover {
+    background-color: #663c72;
+}
+
+/* Modern Table Styles */
+.habit-table {
+    @apply w-full bg-white rounded-lg overflow-hidden;
+    border-collapse: collapse;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.habit-table tbody tr {
+    @apply transition-colors;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.habit-table tbody tr:hover {
+    background: linear-gradient(to right, #faf5ff, #f3e8ff);
+}
+
+.habit-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.habit-table td {
+    @apply py-4 px-6 text-gray-700;
+    border: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+}
+
+.habit-table td.checkbox-cell {
+    width: 60px;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.habit-table td.habit-cell {
+    @apply font-medium;
+    color: #4b5563;
+}
+
+.habit-table td.delete-cell {
+    width: 60px;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* Checkbox styles */
+.habit-checkbox {
+    width: 20px !important;
+    height: 20px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #94a3b8;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0 auto;
+}
+
+.habit-checkbox:hover {
+    border-color: #7c3aed;
+    background-color: #f3e8ff;
+    transform: scale(1.1);
+}
+
+.habit-checkbox:checked {
+    background-color: #7c3aed;
+    border-color: #7c3aed;
+}
+
+.habit-checkbox:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Delete button styles */
+.delete-habit-btn {
+    width: 20px !important;
+    height: 20px !important;
+    @apply text-gray-400 transition-all rounded-full;
+    padding: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.delete-habit-btn:hover {
+    @apply text-red-500;
+    background-color: #fee2e2;
+    transform: scale(1.1);
+}
+
+.delete-habit-btn i {
+    font-size: 14px;
+}
+
+/* Completed habit style */
+.strikethrough {
+    @apply line-through;
+    color: #9ca3af;
+    text-decoration-color: #7c3aed;
+    text-decoration-thickness: 2px;
+}
+
+/* Table container styles */
+.table-container {
+    @apply bg-white rounded-lg shadow-lg p-6 mb-8;
+    background: linear-gradient(to bottom, #ffffff, #faf5ff);
+    position: relative;
+    overflow: visible;
+    padding-top: 1rem;
+}
+
+/* Rating Container Styles */
+.rating-container {
+    background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
+    border: 2px solid #e2e8f0;
+}
+
+/* Stars Rating Styles */
+.stars {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.stars span {
+    cursor: pointer;
+    color: #e2e8f0;
+    transition: all 0.2s ease;
+    padding: 0 0.2rem;
+}
+
+.stars span:hover,
+.stars span:hover ~ span {
+    color: #fbbf24;
+    transform: scale(1.2);
+}
+
+.stars span.active {
+    color: #fbbf24;
+}
+
+#calendarStars {
+    text-shadow: 0 2px 4px rgba(251, 191, 36, 0.2);
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .flex.gap-8 {
+        flex-direction: column;
+    }
+    
+    .rating-container {
+        width: 100% !important;
+        position: static;
+    }
+}
+
+/* Table Title Styles */
+.table-title {
+    background-color: cadetblue;
+    color: white;
+    font-size: 30px;
+    font-weight: lighter;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    font-family: DynaPuff;
+    width: 50%;
+    display: block;
+}
+
+.habit-table {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Hero section styles */
+.hero-section {
+    display: none;
+}
+
+/* Navigation styles */
+.nav-links {
+    @apply flex items-center;
+    margin-left: auto;
+    padding-right: 2rem;
+}
+
+.nav-links a {
+    @apply transition-colors duration-300;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 8px 12px;
+    color: rgb(77, 15, 77);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(77, 15, 77, 0.1);
+    color: rgb(77, 15, 77);
+    box-shadow: 0 0 0 2px rgb(77, 15, 77);
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #4c1d95;
+    margin-left: 12px;
+}
