@@ -37,36 +37,35 @@ This is a client-side web application. No installation is required. Simply open 
 
 # Daily Habits Part
 - Write the habit you want to add to the box and click to "Add" button
-- Click to checkbox next to habit each day you comleted it
+- Click to checkbox next to habit each day you completed it
 - Click the delete button next to the habit you want to remove
 - Rate your daily productivity with stars and view your last rating at the bottom
 
-![githubb](https://github.com/user-attachments/assets/1451d04b-e0a3-4fa3-81d1-fb3f201181d0)
+![dailyy](https://github.com/user-attachments/assets/d0208f76-5773-4458-b06e-cabc18672e32)
 
 
 # Weekly Habits Part
 - Write the habit you want to add to the box and click to "Add" button
-- Click to checkbox next to habit each day you comleted it
+- Click to checkbox next to habit each day you completed it
 - Click the delete button next to the habit you want to remove
 - Leave a weekly note to yourself
 
-  ![weekly](https://github.com/user-attachments/assets/14c4d0d5-f4e7-4ceb-a895-a57bf27366ec)
+![weeklyy](https://github.com/user-attachments/assets/8323eabc-5601-4eca-a2d6-d587e6bbbf70)
 
 
 # Monthly Habits Part
 - Write the habit you want to add to the box and click to "Add" button
-- Click to checkbox next to habit each day you comleted it
+- Click to checkbox next to habit each day you completed it
 - Click the delete button next to the habit you want to remove
 - Click the "View Graphics" button to see your weekly comleted habits or to see your weekly notes on the month you choose
 - Click the "View Calendar" button to see a calendar which you can add your events
-
-  ![monthly](https://github.com/user-attachments/assets/8714001a-2274-482c-8fb2-91a6e568e4cd)
-  ![graphics](https://github.com/user-attachments/assets/3df9877b-450c-4e70-8c42-25d5faa63789)
-  ![calendar](https://github.com/user-attachments/assets/e2914ac6-491c-4573-96ac-126d6b75c37a)
-
+  ![monthhşyy](https://github.com/user-attachments/assets/6a0989db-fc11-41d2-90b4-fff09c91327a)
+  ![grafik](https://github.com/user-attachments/assets/9ccee4ff-a8a5-4958-84e0-aa3c0e02d9fa)
+  ![calendar](https://github.com/user-attachments/assets/68ebebee-d03b-4a6f-85a6-2c1a5fff174a)
 
 
 # About Us Part
 - You can see our developers 
 - You can contact with them on linkedin
-  ![aboutus](https://github.com/user-attachments/assets/01eafe5c-90c1-474f-a57e-c930ab24074c)
+  ![about](https://github.com/user-attachments/assets/eb8a84a5-e8f6-4dd4-bb37-2addc29d2a95)
+
