@@ -33,7 +33,8 @@ This is a client-side web application. No installation is required. Simply open 
 
 ## 💻 Example Usage
 
-# Open the app in your browser by opening the index.html file or visiting the live URL.
+# Open the app in your browser by opening the index.html file or visiting the live URL(https://beyzanurulukus1.github.io/TrackMe/).
+
 
 # Daily Habits Part
 - Write the habit you want to add to the box and click to "Add" button
